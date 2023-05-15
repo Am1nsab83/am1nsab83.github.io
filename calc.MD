@@ -20,13 +20,14 @@ void plus();
 int main()
 {
     printf("this is a calculator made out of C\n");
-    printf("please enter the number you want them the operator (+,-,*,/,^,!) afterwards, after that, enter your secons number\n");
+    printf("please enter your first number\n");
     scanf("%lf",&a);
     operate();
 }
 void operate()
 {
     char op;
+    printf("please enter your operator (-,+,/,*,^,!)\n");
     scanf(" %c",&op);
     switch (op)
     {
@@ -53,6 +54,7 @@ void operate()
 void plus()
 {
     double b;
+    printf("enter your next number\n:");
     scanf("%lf",&b);
     a=a+b;
     printf("%lf",a);
@@ -61,6 +63,7 @@ void plus()
 void minus()
 {
     double b;
+    printf("enter your next number\n:");
     scanf("%lf",&b);
     a=a-b;
     printf("%lf",a);
@@ -69,6 +72,7 @@ void minus()
 void times()
 {
     double b;
+    printf("enter your next number\n:");
     scanf("%lf",&b);
     a=a*b;
     printf("%lf",a);
@@ -77,6 +81,7 @@ void times()
 void devide()
 {
     double b;
+    printf("enter your next number\n:");
     scanf("%lf",&b);
     a=a/b;
     printf("%lf",a);
@@ -86,6 +91,7 @@ void power()
 {
     int i,b;
     const double statica=a;
+    printf("enter your next number\n:");
     scanf("%d",&b);
     if(b==0)
     {
