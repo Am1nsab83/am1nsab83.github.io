@@ -6,11 +6,12 @@
 C-calc:
 
 ```
-//C-calc v1.0 Chamran University 
+//C-calc v1.2 Chamran University 
 #include <stdio.h>
 double a;
+void squreroot();
 void operate();
-void ask();
+void avg();
 void power();
 void factor();
 void times();
@@ -27,7 +28,7 @@ int main()
 void operate()
 {
     char op;
-    printf("please enter your operator (-,+,/,*,^,!)\n");
+    printf("\nplease enter your operator (-,+,/,*,^,!,r,a)\"type \'h\' for help\"\n");
     scanf(" %c",&op);
     switch (op)
     {
@@ -49,6 +50,23 @@ void operate()
         case '!':
             factor();
             break;
+        case 'r':
+            squreroot();
+            break;
+        case 'a':
+            avg();
+            break;
+        case 'c':
+            a=0;
+            main();
+            break;
+        case 'e':
+            return;
+            break;
+        case 'h':
+            printf("help page:\n1:\'e\':exit\n2:\'c\':for reseting the number\n3:\'h\':this page\n4:\'r\':its for squreroot\n5:\'a\':for average calculation.\n");
+            operate();
+            break;
     }
 }
 void plus()
@@ -58,7 +76,7 @@ void plus()
     scanf("%lf",&b);
     a=a+b;
     printf("%lf",a);
-    ask();
+    operate();
 }
 void minus()
 {
@@ -67,7 +85,7 @@ void minus()
     scanf("%lf",&b);
     a=a-b;
     printf("%lf",a);
-    ask();
+    operate();
 }
 void times()
 {
@@ -76,7 +94,7 @@ void times()
     scanf("%lf",&b);
     a=a*b;
     printf("%lf",a);
-    ask();
+    operate();
 }
 void devide()
 {
@@ -85,7 +103,7 @@ void devide()
     scanf("%lf",&b);
     a=a/b;
     printf("%lf",a);
-    ask();
+    operate();
 }
 void power()
 {
@@ -112,7 +130,7 @@ void power()
             a=a*statica;
         printf("%lf",a);
     }
-    ask();
+    operate();
 }
 void factor()
 {
@@ -121,17 +139,33 @@ void factor()
     for(i=1;i<=a;i++)
         s=s*i;
     printf("%lf",s);
-    ask();
+    operate();
 }
-void ask()
+void squreroot()
 {
-    char yn;
-    printf("\nstill wanna continue?(y,n):\n");
-    scanf(" %c",&yn);
-    if(yn=='y'||yn=='Y')
-        operate();
-    else
-        return;    
+    //Babylonian method
+    double r = a/2;
+    int i;
+    for (i = 0; i < 10; i++) {
+        r = (r + a / r) / 2;
+    }
+    printf("%lf",r);
+    operate();
+}
+void avg()
+{
+    int n,i;
+    float a[n],s=0;
+    printf("how many numbers you got?\n:");
+    scanf("%d",&n);
+    printf("now insert your numbers one by one:\n");
+    for(i=0;i<n;i++)
+        scanf("%f",&a[i]);
+    for(i=0;i<n;i++)
+        s=s+a[i];
+    s=s/n;
+    printf("avg of your numbers is %f\n",s);
+    main();
 }
 
 ```
