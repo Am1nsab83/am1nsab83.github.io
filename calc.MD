@@ -6,6 +6,8 @@
 C-calc:
 
 ```
+//amin sabet aghdam
+//401655019
 //C-calc v1.2 Chamran University 
 #include <stdio.h>
 double a;
