@@ -171,3 +171,5 @@ void avg()
 }
 
 ```
+# [لینک به سایت](https://am1nsab83.github.io/calc)
+# [گیتهاب](https://github.com/Am1nsab83/HW)
