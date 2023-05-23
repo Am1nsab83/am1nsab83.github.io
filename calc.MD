@@ -237,5 +237,10 @@ double powerofq(double ap, int b)
     }
 }
 ```
+1. [دنباله تیلور (استفاده شده در سینوس و کسینوس)](https://fa.wikipedia.org/wiki/%D8%A8%D8%B3%D8%B7_%D8%AA%DB%8C%D9%84%D9%88%D8%B1)
+
+2. [روش بابیلون برای گرفتن ریشه دوم](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)
+
+---
 # [لینک به سایت](https://am1nsab83.github.io/calc)
 # [گیتهاب](https://github.com/Am1nsab83/HW)
