@@ -1213,6 +1213,379 @@ Enter a number:
 
 # 5
 
+1.
+
+```
+#include <stdio.h>
+int avalt(int);
+int main()
+{
+    int num,r;
+    printf("please enter your number\n:");
+    scanf("%d",&num);
+    r=avalt(num);
+    if(r == 1)
+        printf("this number is prime");
+    else
+        printf("this number is not prime");
+    return 0;
+}
+int avalt(int v)
+{
+    int i=v-1,b;
+    for(i;i>1;i--)
+    {
+        b=v%i;
+        if(b == 0)
+            return 0;
+    } 
+    return 1;
+}
+```
+out(13,31,14):
+```
+please enter your number
+:13
+this number is prime⏎  
+
+---
+
+please enter your number
+:31
+this number is prime⏎ 
+
+---
+
+please enter your number
+:14
+this number is not prime⏎  
+
+```
+----
+
+2.
+
+```
+#include <stdio.h>
+#include <stdlib.h>
+void reg(int* st,int stnum);
+void out(int *n,int stnum);
+void mor(int *st, int stnum);
+
+int main()
+{
+    int stnum;
+    printf("please enter the number of students\n:");
+    scanf("%d",&stnum);
+    int *st = malloc(stnum * sizeof(int));
+    reg(st,stnum);
+    mor(st,stnum);
+    out(st,stnum);
+    free(st);
+}
+void reg(int* st,int stnum)
+{
+    int i;
+    for(i=0;i<stnum;i++)
+    {
+        printf("please enter the student number %d code\n:",i+1);
+        scanf("%d",&st[i]);
+    }
+}
+void mor(int *st, int stnum)
+{
+    int temp, i, j, k;
+   for (j = 0; j < stnum; ++j)
+   {
+      for (k = j + 1; k < stnum; ++k)
+      {
+         if (st[j] < st[k])
+         {
+            temp = st[j];
+            st[j] = st[k];
+            st[k] = temp;
+         }
+      }
+   }
+}
+void out(int *n,int stnum)
+{
+    for(int i=0;i<stnum;i++)
+        printf("\n%d\n",n[i]);
+}
+```
+out(4,1234,4321,12345,54321):
+
+```
+please enter the number of students
+:4
+please enter the student number 1 code
+:1234
+please enter the student number 2 code
+:4321
+please enter the student number 3 code
+:54321
+please enter the student number 4 code
+:654321
+
+654321
+
+54321
+
+4321
+
+1234
+```
+---
+3.
+
+---
+4.
+
+```
+#include <stdio.h>
+void del();
+int size;
+int main()
+{
+    int i;
+    printf("please enter the ammount of chars you want\n:");
+    scanf("%d",&size);
+    char a[size];
+    for(i=0;i<size;i++)
+        scanf(" %c",&a[i]);
+    del(a);
+    printf (" \n duplicateds are deleted: ");    
+    for ( i = 0; i < size; i++)  
+    {  
+        printf ("\n %c \n", a[i]);  
+    }  
+    return 0; 
+}
+void del(char *arr)
+{
+    int i,j,k;
+    for ( i = 0; i < size; i ++)  
+    {  
+        for ( j = i + 1; j < size; j++)  
+        {  
+            if ( arr[i] == arr[j])  
+            { 
+                for ( k = j; k < size - 1; k++)  
+                {  
+                    arr[k] = arr [k + 1];  
+                } 
+                size--;  
+                j--;      
+            }  
+        }  
+    }  
+}
+```
+
+out:(6,aabb00):
+
+```
+please enter the ammount of chars you want
+:6
+aabb00
+ 
+ duplicateds are deleted: 
+ a 
+
+ b 
+
+ 0
+ ```
+
+ ---
+
+ 5.
+
+ ```
+ #include <stdio.h>
+unsigned long long int plus();
+unsigned long long int stn();
+void read();
+int main()
+{
+    char str1[21],str2[21];
+    unsigned long long int num1=0,num2=0,sum=0;
+    printf("please enter your first number [20]\n:");
+    read(str1);
+    printf("please enter your second number [20]\n:");
+    read(str2);
+    num1=stn(str1);
+    num2=stn(str2);
+    sum = plus(num1,num2);
+    printf("\n%llu",sum);
+    return 0;
+}
+void read(char* *str)
+{
+    gets(str);
+}
+unsigned long long int stn(char *str)
+{
+    unsigned long long int num = 0;
+    for (int i = 0; str[i] != '\0'; i++) 
+    {
+        num = num * 10 + (str[i] - '0');
+    }
+    return num;
+}
+unsigned long long int plus(unsigned long long int num1,unsigned long long int num2)
+{
+    unsigned long long int sum;
+    sum = num1+num2;
+    return sum;
+}
+```
+out(12345678901234567890,09876543210987654321)
+```
+please enter your first number [20]
+:12345678901234567890
+please enter your second number [20]
+:09876543210987654321
+
+3775478038512670595⏎  
+```
+
+---
+
+6.
+```
+#include <stdio.h>
+int main()
+{
+    int i,len;
+    printf("how many numers you got\n:");
+    scanf("%d",&len);
+    int n[len];
+    for(i=0;i<len;i++)
+    {
+        printf("enter numer %d\n:",i+1);
+        scanf("%d",&n[i]);
+    }
+    set(n,len);
+    for(i=0;i<len;i++)
+    {
+        printf("%d\n",n[i]);
+    }
+}
+void set(int *n, int len)
+{
+    int temp, i, j, k;
+   for (j = 0; j < len; ++j)
+   {
+      for (k = j + 1; k < len; ++k)
+      {
+         if (n[j] > n[k])
+         {
+            temp = n[j];
+            n[j] = n[k];
+            n[k] = temp;
+         }
+      }
+   }
+}
+```
+
+out(3,1234,4321,12345):
+```
+how many numers you got
+:3
+enter numer 1
+:1234
+enter numer 2
+:4321
+enter numer 3
+:12345
+1234
+4321
+12345
+```
+
+---
+
+7.
+
+---
+
+8.
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void revstr(char* str,int len);
+int main()
+{
+    int len = 1;
+    char *sent = malloc(len * sizeof(char));
+    printf("enter the word you want\n:");
+    char c;
+    int i = 0;
+    while ((c = getchar()) != '\n' && c != EOF) 
+    {
+        if (i == len - 1) 
+        {
+            len *= 2;
+            sent = realloc(sent, len * sizeof(char));
+        }
+        sent[i++] = c;
+    }
+    sent[i] = '\0';
+    len = strlen(sent);
+    char *sentold = malloc(len * sizeof(char));
+    strncpy(sentold, sent, len);
+    revstr(sent,len);
+    if(strcmp(sent,sentold)==0)
+        printf("\nYES, you can say word %s backwards!\n",sentold);
+    else
+        printf("\nNO, you can not say word %s backwards :(\n",sentold);
+    puts(sent);
+    free(sent);
+    free(sentold);
+    return 0;
+}
+void revstr(char* str,int len)  
+{ 
+    int i,temp;     
+    for (i = 0; i < len/2; i++)  
+    {    
+        temp = str[i];  
+        str[i] = str[len - i - 1];  
+        str[len - i - 1] = temp;  
+    }  
+}
+```
+out(lol,boob,mario)
+```
+enter the word you want
+:lol 
+
+YES, you can say word lol backwards!
+lol
+
+---
+
+
+enter the word you want
+:boob
+
+YES, you can say word boob backwards!
+boob
+
+---
+
+enter the word you want
+:mario
+
+NO, you can not say word mario backwards :(
+oiram
+
+```
+
 # [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/am1nsab83)
 # [لینک به سایت](https://am1nsab83.github.io/2)
 # [گیتهاب](https://github.com/Am1nsab83/HW)
