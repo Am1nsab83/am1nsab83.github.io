@@ -1776,6 +1776,222 @@ Enter a string: I hate you you made my life a nightmare
 I love you you love my love a nightmare ⏎  
 ```
 
+---
+
+11.
+```
+#include <stdio.h>
+void pr(int num[], int len)
+{
+    for(int i=0;i<=len;i++)
+        printf("\n%d\n",num[i]);
+}
+int test(int num[],int len)
+{
+    int i,j;
+    int const staticdev=num[(len+1)/2+i];
+    for(i=0;i<=(len+1)/2;i++)
+    {
+        if(num[(len+1)/2+i]!=0)
+        {
+            for(j=0;j<=len;j++)
+                num[j]=num[j]/staticdev;
+                return 1;
+        }
+        else
+        {
+            i*=-1;
+            if(num[(len+1)/2+i]!=0)
+            {
+                for(j=0;j<=len;j++)
+                    num[j]=num[j]/staticdev;
+                    return 1;
+            }
+            i*=-1;
+        }
+    }
+    return 0;
+}
+int main()
+{
+    int len,i,j;
+    printf("how many numbers do you have?\n:");
+    scanf("%d",&len);
+    len=len-1;
+    int num[len];
+    for(i=0;i<=len;i++)
+    {
+        printf("please enter number %d:\n",i+1);
+        scanf(" %d",&num[i]);
+    }
+    j = test(num,len);
+    if(j==1)
+        pr(num,len);
+    else
+        printf("\ntheres no number, larger than 0");
+}
+```
+out(5,4,4,2,4,4):
+```
+how many numbers do you have?
+:5
+please enter number 1:
+4
+please enter number 2:
+4
+please enter number 3:
+2
+please enter number 4:
+4
+please enter number 5:
+4
+
+2
+
+2
+
+1
+
+2
+
+2
+am1nsab83@surfarch ~/D/p/HW (main)> 
+```
+out(3,0,0,0):
+```
+how many numbers do you have?
+:3
+please enter number 1:
+0
+please enter number 2:
+0
+please enter number 3:
+0
+
+theres no number, larger than 0⏎      
+```
+
+---
+
+12.
+
+```
+#include <stdio.h>
+#include <string.h>
+char a[26]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+char A[26]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+char vowel[10]={'A','E','I','O','U','a','e','i','o','u'};
+int checka(char str[],int len)
+{
+    int count=0;
+    for(int i=0;i<len;i++)
+    {
+        for(int j=0;j<=26;j++)
+        {
+            if(str[i]==a[j])
+                count++;
+            else
+                continue;
+        }
+    }
+    return count;
+}
+int checkA(char str[],int len)
+{
+    int count=0;
+    for(int i=0;i<len;i++)
+    {
+        for(int j=0;j<=26;j++)
+        {
+            if(str[i]==A[j])
+                count++;
+            else
+                continue;
+        }
+    }
+    return count;
+}
+int checknum(char str[],int len)
+{
+    int count=0;
+    for (int i = 0; i < len; i++) 
+    {
+        if (str[i] >= '0' && str[i] <= '9') 
+            count++;
+    }
+    return count;
+}
+int checkvow(char str[],int len)
+{
+   int count=0;
+    for(int i=0;i<len;i++)
+    {
+        for(int j=0;j<=10;j++)
+        {
+            if(str[i]==vowel[j])
+                count++;
+            else
+                continue;
+        }
+    }
+    return count; 
+}
+int main()
+{
+    char str[100];
+    printf("please enter your string\n:");
+    fgets(str,100,stdin);
+    int len = strlen(str);
+    int a=checka(str,len);
+    int A=checkA(str,len);
+    int num=checknum(str,len);
+    int vow=checkvow(str,len);
+    printf("the number of small chars:%d\nthe number of big chars:%d\nthe number of numbers:%d\nand at last the number of vowels:%d",a,A,num,vow);
+    return 0;
+}
+```
+
+out(Hi My username is Am1nsab83):
+```
+please enter your string
+:Hi My username is Am1nsab83
+the number of small chars:17
+the number of big chars:3
+the number of numbers:3
+and at last the number of vowels:8⏎      
+```
+
+---
+
+13.
+
+```
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+    char str[100];
+    int sum = 0;
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] >= '0' && str[i] <= '9') {
+            sum += str[i] - '0';
+        }
+    }
+    printf("Sum of digits: %d\n", sum);
+    return 0;
+}
+```
+
+out(hi I have 3 apple and I want 5 more):
+```
+Enter a string: hi I have 3 apple and I want 5 more
+Sum of digits: 8
+```
+
+---
+
 # [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/am1nsab83)
 # [لینک به سایت](https://am1nsab83.github.io/README)
 # [گیتهاب](https://github.com/Am1nsab83/HW)
