@@ -1510,6 +1510,44 @@ enter numer 3
 
 7.
 
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    int count[256] = {0};
+    printf("Enter a string ending with '.': ");
+    scanf("%[^.]", str);
+    int len = strlen(str);
+    for (int i = 0; i < len; i++) {
+        count[str[i]]++;
+    }
+    for (int i = 0; i < 256; i++) {
+        if (count[i] > 0) {
+            printf("%c occurs %d times\n", i, count[i]);
+        }
+    }
+    return 0;
+}
+```
+out(hello my little world, my little rose.):
+```
+Enter a string ending with '.': hello my little world, my little rose.
+  occurs 6 times
+, occurs 1 times
+d occurs 1 times
+e occurs 4 times
+h occurs 1 times
+i occurs 2 times
+l occurs 7 times
+m occurs 2 times
+o occurs 3 times
+r occurs 2 times
+s occurs 1 times
+t occurs 4 times
+w occurs 1 times
+y occurs 2 times
+```
 ---
 
 8.
