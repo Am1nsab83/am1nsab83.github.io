@@ -1339,6 +1339,93 @@ please enter the student number 4 code
 ---
 3.
 
+```
+#include <stdio.h>
+void bubble(int arr[], int n) 
+{
+    int i, j;
+    for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+void pra(int arr[], int size) 
+{
+    int i;
+    for (i=0; i < size; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+void read(int arr[],int size)
+{
+    for (int i = 0; i < size; i++)
+        scanf("%d", &arr[i]);
+}
+void merge(int arr1[], int n1, int arr2[], int n2, int ma[]) 
+{
+    int i = 0, j = 0, k = 0;
+    while (i < n1 && j < n2) 
+    {
+        if (arr1[i] < arr2[j])
+            ma[k++] = arr1[i++];
+        else
+            ma[k++] = arr2[j++];
+    }
+
+    while (i < n1)
+        ma[k++] = arr1[i++];
+    while (j < n2)
+        ma[k++] = arr2[j++];
+}
+
+int main() 
+{
+    int arr1[5], arr2[5],mergea[10];
+    int n1 = sizeof(arr1)/sizeof(arr1[0]);
+    int n2 = sizeof(arr2)/sizeof(arr2[0]);
+    printf("Enter 5 elements for the first array: ");
+    read(arr1,n1);
+    printf("Enter 5 elements for the second array: ");
+    read(arr2,n2);
+    bubble(arr1, n1);
+    bubble(arr2, n2);
+    printf("sorted first array\n:");
+    pra(arr1, n1);
+    printf("\nSorted second array\n:");
+    pra(arr2, n2);
+    merge(arr1, n1, arr2, n2, mergea);
+    printf("\nMerged array\n:");
+    pra(mergea, n1+n2);
+
+    return 0;
+}
+```
+out:
+```
+Enter 5 elements for the first array: 12345
+54321
+11111
+123457
+687634
+Enter 5 elements for the second array: 1297362
+1287368
+28282171
+1283820
+29862135
+sorted first array
+:11111 12345 54321 123457 687634 
+
+Sorted second array
+:1283820 1287368 1297362 28282171 29862135 
+Merged array
+:11111 12345 54321 123457 687634 1283820 1287368 1297362 28282171 29862135 
+```
+
 ---
 4.
 
@@ -1513,17 +1600,19 @@ enter numer 3
 ```
 #include <stdio.h>
 #include <string.h>
-int main() {
+int main() 
+{
     char str[100];
     int count[256] = {0};
     printf("Enter a string ending with '.': ");
     scanf("%[^.]", str);
     int len = strlen(str);
-    for (int i = 0; i < len; i++) {
+    for (int i = 0; i < len; i++) 
         count[str[i]]++;
-    }
-    for (int i = 0; i < 256; i++) {
-        if (count[i] > 0) {
+    for (int i = 0; i < 256; i++) 
+    {
+        if (count[i] > 0) 
+        {
             printf("%c occurs %d times\n", i, count[i]);
         }
     }
@@ -1548,6 +1637,7 @@ t occurs 4 times
 w occurs 1 times
 y occurs 2 times
 ```
+
 ---
 
 8.
@@ -1622,6 +1712,37 @@ enter the word you want
 NO, you can not say word mario backwards :(
 oiram
 
+```
+
+---
+
+9.
+
+```
+#include <stdio.h>
+#include <string.h>
+int main() 
+{
+    char str1[100], str2[100];
+    printf("Enter the first string: ");
+    scanf("%s", str1);
+    printf("Enter the second string: ");
+    getchar();
+    fgets(str2, 100, stdin);
+    str2[strcspn(str2, "\n")] = 0;
+    char *ptr = strstr(str2, str1);
+    if (ptr != NULL)
+        printf("The first string was found in the second string at position %ld\n", ptr - str2);
+    else 
+        printf("The first string was not found in the second string\n");
+    return 0;
+}
+```
+out(jamal,hi my name is jamal)
+```
+Enter the first string: jamal
+Enter the second string: hi my name is jamal
+The first string was found in the second string at position 14
 ```
 
 # [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/am1nsab83)
