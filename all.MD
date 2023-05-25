@@ -1745,6 +1745,37 @@ Enter the second string: hi my name is jamal
 The first string was found in the second string at position 14
 ```
 
+---
+
+10.
+
+```
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, 100, stdin);
+    str[strcspn(str, "\n")] = 0;
+    char *word = strtok(str, " ");
+    while (word != NULL) 
+    {
+        if (strlen(word) == 4) 
+            printf("love ");
+        else 
+            printf("%s ", word);
+        word = strtok(NULL, " ");
+    }
+    return 0;
+}
+```
+
+out(I hate you you made my life a nightmare):
+```
+Enter a string: I hate you you made my life a nightmare   
+I love you you love my love a nightmare ⏎  
+```
+
 # [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/am1nsab83)
 # [لینک به سایت](https://am1nsab83.github.io/README)
 # [گیتهاب](https://github.com/Am1nsab83/HW)
