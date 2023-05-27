@@ -2,7 +2,9 @@
 
 # [فصل۲](https://am1nsab83.github.io/2)
 
-# [فصل۳](https://am1nsab83.github.io/3) به زودی
+# [فصل۳](https://am1nsab83.github.io/3)
+
+# [فصل۳ اضافه](https://am1nsab83.github.io/3)
 
 # [فصل۴](https://am1nsab83.github.io/4)
 
