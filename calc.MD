@@ -33,7 +33,7 @@ int main()
 void operate()
 {
     char op;
-    printf("\nplease enter your operator (-,+,/,*,^,!,r,a)\"type \'h\' for help\"\n");
+    printf("\nplease enter your operator (-,+,/,*,^,!,r,a,s,c)\"type \'h\' for help\"\n");
     scanf(" %c", &op);
     switch (op)
     {
