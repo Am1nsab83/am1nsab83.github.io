@@ -1,6 +1,7 @@
-مهشاد رضایی
+امین ثابت اقدم
 
-401560044
+401655019
+
 
 ----
 C-calc:
@@ -242,4 +243,4 @@ double powerofq(double ap, int b)
 2. [روش بابیلون برای گرفتن ریشه دوم](https://en.wikipedia.org/wiki/Methods_of_computing_square_roots#Babylonian_method)
 
 ---
-# [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/mahshadrezaeiii)
+# [در صورت وجود مشکل یا سوال به این آی دی در تلگرام پیام بدین](https://t.me/am1nsab83)
